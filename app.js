@@ -2,6 +2,7 @@ const http = require('http')
 const os = require('os')
 
 console.log('Server starting')
+var port = process.env.PORT || 8080
 
 var handler = function(request, response) {
     console.log("Received request from " + request.connection.remoteAddress);
@@ -10,4 +11,4 @@ var handler = function(request, response) {
 }
 
 var server = http.createServer(handler);
-server.listen(9090);
+server.listen(port);
